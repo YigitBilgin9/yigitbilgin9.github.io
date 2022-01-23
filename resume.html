@@ -7,34 +7,123 @@
         
         <link rel="stylesheet" href="main.css">
         <style>
+            .switch {
+              position: absolute;
+              top: 10px;
+              right: 10px;  
+              display: inline-block;
+              width: 33px;
+              height: 19px;
+            }
+
+            .switch input { 
+              opacity: 0;
+              width: 0;
+              height: 0;
+            }
+
+            .slider {
+              position: absolute;
+              cursor: pointer;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background-color: #ccc;
+              -webkit-transition: .4s;
+              transition: .4s;
+            }
+
+            .slider:before {
+              position: absolute;
+              content: "";
+              height: 15px;
+              width: 15px;
+              left: 2px;
+              bottom: 2px;
+              background-color: white;
+              -webkit-transition: .4s;
+              transition: .4s;
+            }
+
+            input:checked + .slider {
+              background-color: #303030;
+            }
+
+            input:focus + .slider {
+              box-shadow: 0 0 1px #303030;
+            }
+
+            input:checked + .slider:before {
+              -webkit-transform: translateX(13px);
+              -ms-transform: translateX(13px);
+              transform: translateX(13px);
+            }
+            
+            /* Rounded sliders */
+            .slider.round {
+              border-radius: 17px;
+            }
+
+            .slider.round:before {
+              border-radius: 50%;
+            }
+            
             h1 {
                 text-align: center;
+                color: floralwhite;
                 }
             h2 {
                 text-align: center;
+                color: floralwhite;
             }
             h3 {
                 text-align: center;
+                color: floralwhite;
             }
-            .hr1 {
+            .hr1-dark {
                 width: 100%;
                 height: 1px;
                 margin-left: auto;
                 margin-right: auto;
-                background-color: #000000;
                 border: 0 none;
+                background-color: floralwhite;
+                color: floralwhite;
+                border-color: floralwhite;
             }
-            .hr2 {
+            .hr2-dark {
                 width: 100%;
                 height: 3px;
                 margin-left: auto;
                 margin-right: auto;
-                background-color: #000000;
                 border: 0 none;
+                background-color: floralwhite;
+                color: floralwhite;
+                border-color: floralwhite;
+            }
+            .hr1-light {
+                width: 100%;
+                height: 1px;
+                margin-left: auto;
+                margin-right: auto;
+                border: 0 none;
+                background-color: #303030;
+                color: #303030;
+                border-color: #303030;
+            }
+            .hr2-light {
+                width: 100%;
+                height: 3px;
+                margin-left: auto;
+                margin-right: auto;
+                border: 0 none;
+                background-color: #303030;
+                color: #303030;
+                border-color: #303030;
             }
             a { 
                 text-decoration: none;
-                text-decoration-color: #6068EA;
+                color: floralwhite;
             }
             div {
                 display: table;
@@ -43,45 +132,109 @@
                 font-size: 23px;
             }
             .dark-mode {
-                background-color: black;
-                color: white;
+                background-color: #303030;
+                color: floralwhite;
             }
             .light-mode {
-                background-color: white;
-                color: black;
+                background-color: floralwhite;
+                color: #303030;
             }
-    </style>
+            p {
+                color: floralwhite;
+                text-align: center;
+            }
+            body {
+                background-color: #303030;
+            }
+        </style>
     </head>
     
-    <body style="background-color: floralwhite">
+    <body>
         
-        <h1>Yiğit Bilgin</h1>
+        <h1 id = "head1">Yiğit Bilgin</h1>
+        
         <div id="Console">
             <a id="Home", href="index.html">Home </a>
             <a id="Resume", href="resume.html">Resume </a>
             <a id="Contact", href="contact.html">Contact </a>
         </div>
-        <hr class="hr1" />
-        <hr class="hr2" />
-        <h2>A Personal Playground</h2>
-        <p>
+        
+        <hr class="hr1-dark", id = "hr11"/>
+        <hr class="hr2-dark", id = "hr22"/>
+        
+        <h2 id = "head2" >A Personal Playground</h2>
+        <h3 id="DarkModetext">Dark Mode is ON</h3>
+        <p id = "p1">
             This is resume
-            
         </p>
-        <button onclick="darkMode()">Darkmode</button>
-        <button onclick="lightMode()">LightMode</button>
+        <label class="switch">
+            <input type="checkbox" id = "darkmodeswitch" onchange="lightMode()">
+            <span class="slider round"></span>
+            
+        </label>
         <script>
-            function darkMode() {
-                var element = document.body;
-                var content = document.getElementById("DarkModetext");
-                element.className = "dark-mode";
-                content.innerText = "Dark Mode is ON";
-            }
             function lightMode() {
-                var element = document.body;
-                var content = document.getElementById("DarkModetext");
-                element.className = "light-mode";
-                content.innerText = "Dark Mode is OFF";
+                if(document.getElementById("darkmodeswitch").checked === true){
+                    var element = document.body;
+                    element.className = "light-mode";
+
+                    var content = document.getElementById("DarkModetext");
+                    content.innerText = "Dark Mode is OFF";
+                    content.className = "light-mode";
+
+                    var head1 = document.getElementById("head1");
+                    head1.className = "light-mode";
+
+                    var head2 = document.getElementById("head2");
+                    head2.className = "light-mode";
+
+                    var p1 = document.getElementById("p1");
+                    p1.className = "light-mode";
+
+                    var line1 = document.getElementById("hr11");
+                    line1.className = "hr1-light";
+                    var line2 = document.getElementById("hr22");
+                    line2.className = "hr2-light";
+
+                    var console = document.getElementById("Home");
+                    console.className = "light-mode";
+
+                    var console1 = document.getElementById("Resume");
+                    console1.className = "light-mode";
+
+                    var console2 = document.getElementById("Contact");
+                    console2.className = "light-mode";
+                } else {
+                    var element = document.body;
+                    element.className = "dark-mode";
+
+                    var content = document.getElementById("DarkModetext");
+                    content.innerText = "Dark Mode is ON";
+                    content.className = "dark-mode";
+
+                    var head1 = document.getElementById("head1");
+                    head1.className = "dark-mode";
+
+                    var head2 = document.getElementById("head2");
+                    head2.className = "dark-mode";
+
+                    var p1 = document.getElementById("p1");
+                    p1.className = "dark-mode";
+
+                    var line1 = document.getElementById("hr11");
+                    line1.className = "hr1-dark";
+                    var line2 = document.getElementById("hr22");
+                    line2.className = "hr2-dark";
+
+                    var console = document.getElementById("Home");
+                    console.className = "dark-mode";
+
+                    var console1 = document.getElementById("Resume");
+                    console1.className = "dark-mode";
+
+                    var console2 = document.getElementById("Contact");
+                    console2.className = "dark-mode";
+                }
             }
         </script>
     </body>
