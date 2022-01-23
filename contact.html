@@ -152,7 +152,7 @@
             }
         </style>
     </head>
-    
+     
     <body>
         
         <h1 id = "head1">Yiğit Bilgin</h1>
@@ -177,31 +177,15 @@
             This is contact
         </p>
         
-        <div class="main">
-            <!-- Header-->
-            <div class="header"><h1>PHP MAILER</h1></div>
-            <!-- Form wrapper -->
-              <div class="form-wrapper">
-            <!-- Form -->
-              <div class="form">
-              <form action="test.php" method="post">
-                <p><label>Name</label><br />
-                    <input type="text" name="name" value="Sender name">
-                </p>  
-                <p><label>Sender</label><br />
-                    <input type="text" name="email" value="Sender e-mail...">
-                </p>
-                <p><label>Subject</label><br />
-                    <input type="text" name="subject" value="E-mail subject..." >
-                </p>
-                <p><label>Message</label><br />
-                    <textarea rows="5" type="text" name="message">Your message...</textarea>
-                </p>
-              <input class="button" type="submit" name="submit" value="Submit">
-            </form>
-            </div>
-            </div>
-    </div>    
+        <form action="https://formsubmit.co/yigitbilgincontact@gmail.com" method="POST">
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="text" name="message" placeholder ="Your message..." required>
+            <input type="hidden" name="_subject" value="New submission!">
+            <button type="submit">Send</button>
+            
+            <input type="hidden" name="_next" value="https://yigitbilgin9.github.io/thanks.html">
+
+        </form>
         
         
         <script>
