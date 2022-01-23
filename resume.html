@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Yigit Bilgin Resume</title>
+        
+        <link rel="stylesheet" href="main.css">
+        <style>
+            h1 {
+                text-align: center;
+                }
+            h2 {
+                text-align: center;
+            }
+            h3 {
+                text-align: center;
+            }
+            .hr1 {
+                width: 100%;
+                height: 1px;
+                margin-left: auto;
+                margin-right: auto;
+                background-color: #000000;
+                border: 0 none;
+            }
+            .hr2 {
+                width: 100%;
+                height: 3px;
+                margin-left: auto;
+                margin-right: auto;
+                background-color: #000000;
+                border: 0 none;
+            }
+            a { 
+                text-decoration: none;
+                text-decoration-color: #6068EA;
+            }
+            div {
+                display: table;
+                margin-right: auto;
+                margin-left: auto;
+                font-size: 23px;
+            }
+            .dark-mode {
+                background-color: black;
+                color: white;
+            }
+            .light-mode {
+                background-color: white;
+                color: black;
+            }
+    </style>
+    </head>
+    
+    <body style="background-color: floralwhite">
+        
+        <h1>Yiğit Bilgin</h1>
+        <div id="Console">
+            <a id="Home", href="index.html">Home </a>
+            <a id="Resume", href="resume.html">Resume </a>
+            <a id="Contact", href="contact.html">Contact </a>
+        </div>
+        <hr class="hr1" />
+        <hr class="hr2" />
+        <h2>A Personal Playground</h2>
+        <p>
+            This is resume
+            
+        </p>
+        <button onclick="darkMode()">Darkmode</button>
+        <button onclick="lightMode()">LightMode</button>
+        <script>
+            function darkMode() {
+                var element = document.body;
+                var content = document.getElementById("DarkModetext");
+                element.className = "dark-mode";
+                content.innerText = "Dark Mode is ON";
+            }
+            function lightMode() {
+                var element = document.body;
+                var content = document.getElementById("DarkModetext");
+                element.className = "light-mode";
+                content.innerText = "Dark Mode is OFF";
+            }
+        </script>
+    </body>
+</html>
+
