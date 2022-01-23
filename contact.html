@@ -150,6 +150,18 @@
             body {
                 background-color: #303030;
             }
+            input{
+              border-radius:5px;
+              -moz-border-radius:5px;
+              -webkit-border-radius:5px;
+              background-color: floralwhite;
+            }
+            button{
+              border-radius:5px;
+              -moz-border-radius:5px;
+              -webkit-border-radius:5px;
+              background-color: floralwhite;
+            }
         </style>
     </head>
      
@@ -174,15 +186,21 @@
             
         </label>
         <p id = "p1">
-            This is contact
+            Contact me! 
         </p>
         
         <form action="https://formsubmit.co/yigitbilgincontact@gmail.com" method="POST">
-            <input type="email" name="email" placeholder="Email Address" required>
-            <input type="text" name="message" placeholder ="Your message..." required>
+            <div style="text-align: center;">
+                <input type="text" class="resizedTextbox" name="name" placeholder="Name" required id = "nametext">
+                <input type="email" class="resizedTextbox" name="email" placeholder="Email Address" required id = "mailtext">
+            </div>
+            <div style="text-align: left">
+                <textarea type="text" class="userInput" name="message" placeholder ="Your message..." required></textarea>
+            </div>
+            <div style="text-align: right;">
+                <button type="submit">Submit</button>
+            </div>
             <input type="hidden" name="_subject" value="New submission!">
-            <button type="submit">Send</button>
-            
             <input type="hidden" name="_next" value="https://yigitbilgin9.github.io/thanks.html">
 
         </form>
