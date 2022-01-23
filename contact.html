@@ -80,6 +80,10 @@
             h3 {
                 text-align: center;
                 color: floralwhite;
+                position: absolute;
+                top: 5px;
+                right: 50px;
+                font-size: 10px;
             }
             .hr1-dark {
                 width: 100%;
@@ -164,14 +168,42 @@
         
         <h2 id = "head2" >A Personal Playground</h2>
         <h3 id="DarkModetext">Dark Mode is ON</h3>
-        <p id = "p1">
-            This is contact
-        </p>
         <label class="switch">
             <input type="checkbox" id = "darkmodeswitch" onchange="lightMode()">
             <span class="slider round"></span>
             
         </label>
+        <p id = "p1">
+            This is contact
+        </p>
+        
+        <div class="main">
+            <!-- Header-->
+            <div class="header"><h1>PHP MAILER</h1></div>
+            <!-- Form wrapper -->
+              <div class="form-wrapper">
+            <!-- Form -->
+              <div class="form">
+              <form action="test.php" method="post">
+                <p><label>Sender</label><br />
+                <input type="text" name="email" value="Sender e-mail...">
+                </p>
+              <p><label>Recipient</label><br />
+                <input type="text" name="recipient" value="Recipient e-mail...">
+              </p>
+              <p><label>Subject</label><br />
+                <input type="text" name="subject" value="E-mail subject..." >
+              </p>
+              <p><label>Message</label><br />
+              <textarea rows="5" type="text" name="message">Your message...</textarea>
+              </p>
+              <input class="button" type="submit" name="submit" value="Submit">
+            </form>
+            </div>
+            </div>
+    </div>    
+        
+        
         <script>
             function lightMode() {
                 if(document.getElementById("darkmodeswitch").checked === true){

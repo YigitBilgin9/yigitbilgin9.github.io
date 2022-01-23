@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Yigit Bilgin Resume</title>
+        <title>Thanks!</title>
         
         <link rel="stylesheet" href="main.css">
         <style>
@@ -73,12 +73,10 @@
                 text-align: center;
                 color: floralwhite;
                 }
-            
             h2 {
                 text-align: center;
                 color: floralwhite;
             }
-            
             h3 {
                 text-align: center;
                 color: floralwhite;
@@ -87,7 +85,6 @@
                 right: 50px;
                 font-size: 10px;
             }
-            
             .hr1-dark {
                 width: 100%;
                 height: 1px;
@@ -98,7 +95,6 @@
                 color: floralwhite;
                 border-color: floralwhite;
             }
-            
             .hr2-dark {
                 width: 100%;
                 height: 3px;
@@ -109,7 +105,6 @@
                 color: floralwhite;
                 border-color: floralwhite;
             }
-            
             .hr1-light {
                 width: 100%;
                 height: 1px;
@@ -120,7 +115,6 @@
                 color: #303030;
                 border-color: #303030;
             }
-            
             .hr2-light {
                 width: 100%;
                 height: 3px;
@@ -131,38 +125,31 @@
                 color: #303030;
                 border-color: #303030;
             }
-            
             a { 
                 text-decoration: none;
                 color: floralwhite;
             }
-            
             div {
                 display: table;
                 margin-right: auto;
                 margin-left: auto;
                 font-size: 23px;
             }
-            
             .dark-mode {
                 background-color: #303030;
                 color: floralwhite;
             }
-            
             .light-mode {
                 background-color: floralwhite;
                 color: #303030;
             }
-            
             p {
                 color: floralwhite;
                 text-align: center;
             }
-            
             body {
                 background-color: #303030;
             }
-            
         </style>
     </head>
     
@@ -181,13 +168,26 @@
         
         <h2 id = "head2" >A Personal Playground</h2>
         <h3 id="DarkModetext">Dark Mode is ON</h3>
-        <p id = "p1">
-            This is resume
-        </p>
         <label class="switch">
             <input type="checkbox" id = "darkmodeswitch" onchange="lightMode()">
             <span class="slider round"></span>
+            
         </label>
+        <p id = "p1">
+            This is thanks!
+        </p>
+        
+        <form action="mail_handler.php" method="post">
+            First Name: <input type="text" name="first_name"><br>
+            Last Name: <input type="text" name="last_name"><br>
+            Email: <input type="text" name="email"><br>
+            Message:<br><textarea rows="5" name="message" cols="30"></textarea><br>
+            <input type="submit" name="submit" value="Submit">
+        </form>
+        
+        
+        
+        
         <script>
             function lightMode() {
                 if(document.getElementById("darkmodeswitch").checked === true){
