@@ -11,7 +11,7 @@ $headers = "From: ".$email;
 $txt = $message;
 
 mail($mailTo, $subject, $txt, $headers);
-header("Location: success.html");
+header("Location: thanks.html");
 }
 
 ?>
