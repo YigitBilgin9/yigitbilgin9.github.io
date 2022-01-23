@@ -1,3 +1,2 @@
-# yigitbilgin9.github.io
-personal website
+# A simple HTML website
 A template for simple HTML website
